@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Calendar</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+<body>
+    <div class="calendar">
+        <header class="calendar__header">
+            <h1 class="calendar__header__titleA">&nbsp;</h1>
+            <h1 class="calendar__header__title">Word Calendar</h1>
+            <div class="calendar__header__torn-pages"></div>
+        </header>
+
+        <div class="calendar__body">
+            <div class="calendar__date">
+                <span class="calendar__date__day" id="currentDay"></span>
+            </div>
+            
+            <div class="calendar__month">
+                <span class="calendar__date__month" id="currentMonth"></span>
+            </div>
+
+            <div class="calendar__word">
+                <h2 id="word"></h2>
+                <p id="definition"></p>
+            </div>
+            
+            <button id="testButton" class="calendar__word__button" onclick="window.location.href = 'pages/exercise.html'">EXERCISES</button>
+        </div>
+
+        <div class="calendar__footer">
+            <button class="calendar__footer__button" onclick="window.location.href = 'pages/grammar.html'">GRAMMAR</button>
+        </div>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
