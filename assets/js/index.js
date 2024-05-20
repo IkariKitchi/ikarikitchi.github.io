@@ -60,18 +60,7 @@ fetch('https://raw.githubusercontent.com/modimen/calendar/main/word.csv')
         // You can display an error message to the user here
     });
 
-// Event listeners for date and month clicks
-currentDayElement.addEventListener('click', () => {
-    // Set today as Monday
-    currentDate.setDate(currentDate.getDate() - (currentDate.getDay() || 7));
-    loadWordData();
-});
 
-currentMonthElement.addEventListener('click', () => {
-    // Set today to the first day of the current month
-    currentDate.setDate(1);
-    loadWordData();
-});
 
 function loadWordData() {
     // Update current day and month elements
