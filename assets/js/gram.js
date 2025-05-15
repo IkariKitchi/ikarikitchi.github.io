@@ -1,7 +1,8 @@
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1; // Months are zero-based
-
+let audioPath;
+let testAud ="../data/audio/legacy.mp3";
 
 
 const months = [
@@ -19,7 +20,6 @@ const months = [
     "December"
 ];
 
-
 // Fetch words data from URL
 fetch('https://raw.githubusercontent.com/modimen/calendar/main/gram.csv')
     .then(response => {
@@ -36,7 +36,8 @@ fetch('https://raw.githubusercontent.com/modimen/calendar/main/gram.csv')
         const today = `${currentDay.toString().padStart(2, '0')}.${currentMonth.toString().padStart(2, '0')}`;
         const wordData = wordsData.find(row => row.startsWith(today));
         if (wordData) {
-            const [date, curDay, word1, definition1, definition12, word2, definition2, definition22, word3, definition3, definition32, word4, definition4, definition42] = wordData.split(';');
+            const [date, curDay, audPath, word1, definition1, definition12, word2, definition2, definition22, word3, definition3, definition32, word4, definition4, definition42] = wordData.split(';');
+            audioPath=audPath;
             document.getElementById('currentDay').textContent = curDay;
             document.getElementById('word1').textContent = word1;
             document.getElementById('definition1').textContent = definition1;
@@ -57,4 +58,12 @@ fetch('https://raw.githubusercontent.com/modimen/calendar/main/gram.csv')
         // You can display an error message to the user here
     });
 
+    let audio = document.createElement('audio');
+    audio.src = testAud;
+    // audio.src = audioPath;
+    audio.load();
+    document.body.appendChild(audio);
 
+    document.getElementById('playButton').addEventListener('click', function() {
+        audio.play();
+    });

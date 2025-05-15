@@ -1,12 +1,12 @@
 body {
-    background-image: url("../images/oboi.jpg"); 
-    background-size: cover;
-    /* background-color: #292929; */
+    /* background-image: url("../images/oboi.jpg"); 
+    background-size: cover; */
+    background-color: #625B71;
     font-family: sans-serif;
 }
 
 .calendar {
-    background-color: #efebe9;
+    background-color: #E8DEF8;
     max-width: 500px;
     margin: 0 auto;
     border-radius: 10px;
@@ -22,7 +22,7 @@ body {
 }
 
 .calendar__header__title {
-    color: #3e2723;
+    color: #4F378B;
     font-size: 1.5em;
 }
 
@@ -45,7 +45,7 @@ body {
 .calendar__date__day {
     font-size: 10em;
     font-weight: bold;
-    color: #5d4037;
+    color: #38236e;
 }
 
 .calendar__month {
@@ -57,7 +57,7 @@ body {
 .calendar__date__month {
     font-size: 3.5em;
     font-weight: bold;
-    color: #795548;
+    color: #4F378B;
     text-transform: uppercase;
 }
 
@@ -70,13 +70,15 @@ body {
 #word {
     font-size: 2em;
     font-weight: bold;
-    color: #4e342e;
+    color: #38236e;
     margin-bottom: -10px;
 }
 
 #definition {
+	margin-left: 20px;
+	margin-right: 20px;
     font-size: 1em;
-    color: #8d6e63;
+    color:  #4F378B;
 }
 
 .calendar__word__button {
@@ -87,7 +89,7 @@ body {
     display: block;
     width: 50%;
     padding: 10px 20px;
-    background-color: #a1887f;
+    background-color: #644d9e;
     color: white;
     border: none;
     border-radius: 30px;
@@ -95,6 +97,7 @@ body {
     font-size: 1em;
     text-align: center;
     transition: background-color 0.3s;
+    box-shadow: 0 1px 2px rgb(0, 0, 0);
 }
 
 .calendar__word__button.show {
@@ -102,7 +105,7 @@ body {
 }
 
 .calendar__word__button:hover {
-    background-color: #93766d;
+    background-color: #5a34ba;
 }
 
 .calendar__footer {
@@ -127,7 +130,7 @@ body {
     display: block;
     width: 50%;
     padding: 10px 20px;
-    background-color: #bcaaa4;
+    background-color: #7560ab;
     color: white;
     border: none;
     border-radius: 30px;
@@ -135,10 +138,11 @@ body {
     font-size: 1em;
     text-align: center;
     transition: background-color 0.3s;
+    box-shadow: 0 1px 2px rgb(0, 0, 0);
 }
 
 .calendar__footer__button:hover {
-    background-color: #b1978f;
+    background-color: #5a34ba;
 }
 
 .calendar__footer__button i {
