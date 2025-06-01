@@ -1,8 +1,12 @@
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
-const yesterDay = new Date(currentDate.setDate(currentDate.getDate() - 1)).getDate();
-const theDayBeforeYesterDay = new Date(currentDate.setDate(currentDate.getDate() - 1)).getDate();
 const currentMonth = currentDate.getMonth() + 1;
+const yesterDate = new Date(currentDate.setDate(currentDate.getDate() - 1));
+const yesterDay = yesterDate.getDate();
+const yesterMonth = yesterDate.getMonth() + 1;
+const theDayBeforeYesterDate = new Date(currentDate.setDate(currentDate.getDate() - 1));
+const theDayBeforeYesterDay = theDayBeforeYesterDate.getDate();
+const tdbyMonth = theDayBeforeYesterDate.getMonth() + 1;
 
 fetch('https://raw.githubusercontent.com/modimen/calendar/main/word.csv')
     .then(response => {
@@ -16,8 +20,8 @@ fetch('https://raw.githubusercontent.com/modimen/calendar/main/word.csv')
         const wordsData = data.split('\n');
 
         const today = `${currentDay.toString().padStart(2, '0')}.${currentMonth.toString().padStart(2, '0')}`;
-        const yester = `${yesterDay.toString().padStart(2, '0')}.${currentMonth.toString().padStart(2, '0')}`;
-        const bYester = `${theDayBeforeYesterDay.toString().padStart(2, '0')}.${currentMonth.toString().padStart(2, '0')}`;
+        const yester = `${yesterDay.toString().padStart(2, '0')}.${yesterMonth.toString().padStart(2, '0')}`;
+        const bYester = `${theDayBeforeYesterDay.toString().padStart(2, '0')}.${tdbyMonth.toString().padStart(2, '0')}`;
         const wordData = wordsData.find(row => row.startsWith(today));
         const wordDataY = wordsData.find(row => row.startsWith(yester));
         const wordDataD = wordsData.find(row => row.startsWith(bYester));

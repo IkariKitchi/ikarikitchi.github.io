@@ -2,7 +2,7 @@ const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1; // Months are zero-based
 let audioPath;
-let testAud ="../data/audio/legacy.mp3";
+let testAud ="../data/audio/deceased.mp3";
 
 
 const months = [
@@ -48,9 +48,6 @@ fetch('https://raw.githubusercontent.com/modimen/calendar/main/gram.csv')
             document.getElementById('word3').textContent = word3;
             document.getElementById('definition3').textContent = definition3;
             document.getElementById('definition32').textContent = definition32;
-            document.getElementById('word4').textContent = word4;
-            document.getElementById('definition4').textContent = definition4;
-            document.getElementById('definition42').textContent = definition42;
         }
     })
     .catch(error => {
